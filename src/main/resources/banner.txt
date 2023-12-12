@@ -1,0 +1,24 @@
+${AnsiColor.BLUE}              .---. .---.
+${AnsiColor.BLUE}             :     : o   :    me want cookie!
+${AnsiColor.BLUE}         _..-:   o :     :-.._    /
+${AnsiColor.BLUE}     .-''  '  `---' `---' "   ``-.
+${AnsiColor.BLUE}   .'   "   '  "  .    "  . '  "  `.
+${AnsiColor.BLUE}  :   '.---.,,.,...,.,.,.,..---.  ' ;
+${AnsiColor.BLUE}  `. " `.                     .' " .'
+${AnsiColor.BLUE}   `.  '`.                   .' ' .'
+${AnsiColor.BLUE}    `.    `-._           _.-' "  .'  .----.
+${AnsiColor.BLUE}      `. "    '"--...--"'  . ' .'  .'  o   `.
+${AnsiColor.BLUE}      .'`-._'    " .     " _.-'`. :       o  :
+${AnsiColor.BLUE}    .'      ```--.....--'''    ' `:_ o       :
+${AnsiColor.BLUE}  .'    "     '         "     "   ; `.;";";";'
+${AnsiColor.BLUE} ;         '       "       '     . ; .' ; ; ;
+${AnsiColor.BLUE};     '         '       '   "    .'      .-'
+${AnsiColor.BLUE}'  "     "   '      "           "    _.-'
+${AnsiColor.BLACK}?
+${AnsiColor.BLACK}?
+${AnsiColor.BLACK}?  ${AnsiColor.BLACK}Application Name : ${spring.application.name}
+${AnsiColor.BLACK}?  ${AnsiColor.BRIGHT_RED}Spring Boot Version : ${spring-boot.formatted-version}
+${AnsiColor.BLACK}?  ${AnsiColor.BRIGHT_YELLOW}Java Version : ${java.version}
+${AnsiColor.BLACK}?  ${AnsiColor.BRIGHT_GREEN}Created by : ${spring.info.build.creator}
+${AnsiColor.BLACK}?
+${AnsiColor.BLACK}?
