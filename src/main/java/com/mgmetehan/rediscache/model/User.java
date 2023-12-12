@@ -12,6 +12,8 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Where;
 
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
@@ -20,7 +22,7 @@ import org.hibernate.annotations.Where;
 @AllArgsConstructor
 @Table(name = "users")
 @Where(clause = "deleted = false")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")

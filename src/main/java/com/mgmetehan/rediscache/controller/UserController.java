@@ -1,19 +1,17 @@
 package com.mgmetehan.rediscache.controller;
 
 import com.mgmetehan.rediscache.dto.CreateUserDto;
+import com.mgmetehan.rediscache.dto.UpdateUserDto;
 import com.mgmetehan.rediscache.model.User;
 import com.mgmetehan.rediscache.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,8 +26,13 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping()
-    public ResponseEntity<String> createUser(@RequestBody CreateUserDto dto) {
+    public ResponseEntity<User> createUser(@RequestBody CreateUserDto dto) {
         return ResponseEntity.ok(userService.createUser(dto));
+    }
+
+    @PutMapping()
+    public ResponseEntity<String> updateUser(@RequestBody UpdateUserDto dto) {
+        return new ResponseEntity<>(userService.updateUser(dto), HttpStatus.OK);
     }
 
     @DeleteMapping()
