@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateUserDto {
-    private String id;
+    private Long id;
     private String password;
 
     public User toEntity(UpdateUserDto updateUserDto) {

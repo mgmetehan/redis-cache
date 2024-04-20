@@ -2,6 +2,7 @@ version: '3'
 services:
   redis:
     image: "bitnami/redis:latest"
+    platform: linux/amd64
     ports:
       - "6379:6379"
     volumes:
@@ -9,26 +10,25 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
 
-  # Veritabani hizmeti, ornek bir PostgreSQL veritabanini baslatir.
   db:
     image: debezium/example-postgres
+    platform: linux/amd64
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: toor
     ports:
-      - 5432:5432  # PostgreSQL veritabanina disaridan erisim saglar.
+      - 5432:5432
     extra_hosts:
       - "host.docker.internal:host-gateway"
     command:
       - "postgres"
       - "-c"
       - "wal_level=logical"
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/create-db-tables.sql  # Ilk veritabani tablolarini olusturan SQL dosyasini yukler.
-  # Adminer hizmeti, veritabani yonetim arayuzu saglar.
+
   adminer:
     image: adminer
+    platform: linux/amd64
     restart: always
     ports:
       - 8001:8080  # Adminer'a disaridan erisim saglar.

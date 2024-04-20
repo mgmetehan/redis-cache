@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,12 +30,12 @@ public class UserController {
     }
 
     @PutMapping()
-    public ResponseEntity<String> updateUser(@RequestBody UpdateUserDto dto) {
+    public ResponseEntity<User> updateUser(@RequestBody UpdateUserDto dto) {
         return new ResponseEntity<>(userService.updateUser(dto), HttpStatus.OK);
     }
 
     @DeleteMapping()
-    public ResponseEntity<String> deleteUser(@RequestParam String id) {
+    public ResponseEntity<String> deleteUser(@RequestParam Long id) {
         return ResponseEntity.ok(userService.deleteUser(id));
     }
 
@@ -45,8 +44,8 @@ public class UserController {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public User getUserById(@PathVariable String id) {
+    @GetMapping("/id")
+    public User getUserById(@RequestParam Long id) {
         return userService.getUserById(id);
     }
 }
