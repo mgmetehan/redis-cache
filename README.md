@@ -13,7 +13,7 @@ NoSQL, "Not Only SQL" ifadesinin kisaltmasidir ve geleneksel SQL tabanli iliskis
 ## Redis Nedir?
 Redis, open-source, in-memory veri yapisi deposudur ve  database, cache, ve message broker olarak kullanilabilir. Salvatore Sanfilippo tarafindan baslica olarak gelistirilen Redis, 2009 yilinda ilk olarak piyasaya suruldu ve o zamandan beri esnekligi, performansi ve kullanim kolayligi nedeniyle onemli bir populerlik kazandi.
 
-Temelde, Redis bir key-value deposu olarak islev gorur, burada veriler bir key-value cifti koleksiyonu olarak saklanir. Ancak, Redis'i digerlerinden ayiran sey, basit key-value ciftlerinin otesinde cesitli veri yapilarini desteklemesidir. Bu veri yapilari arasinda strings, lists, sets, sorted sets, hashes, bitmaps, hyperloglogs ve daha fazlasi bulunur. Bu esneklik, gelistiricilerin veriyi, belirli kullanim durumlarina uyacak sekilde modellemesine ve islemesine olanak tanir.
+Temelde, Redis bir key-value deposu olarak islev gorur, burada veriler bir key-value cifti koleksiyonu olarak saklanir. Ancak, Redis'i digerlerinden ayiran sey, basit key-value ciftlerinin otesinde cesitli veri yapilarini desteklemesidir. Bu veri yapilari arasinda string, list, set, sorted set, hash, bitmap, hyperloglog ve daha fazlasi bulunur. Bu esneklik, gelistiricilerin veriyi, belirli kullanim durumlarina uyacak sekilde modellemesine ve islemesine olanak tanir.
 
 Redis'in onemli ozelliklerinden biri, verileri baslica bellekte saklama(RAM) yetenegidir, bu da son derece hizli okuma ve yazma islemlerini mumkun kilar. Bu, sik erisilen verileri onbellege almak veya web uygulamalarinda oturum durumunu yonetmek gibi dusuk gecikmeli veri erisimini gerektiren uygulamalar icin Redis'i ozellikle uygun hale getirir.
 
@@ -26,9 +26,9 @@ Redis bellek uzerinde verileri saklar, bundan dolayi cok fazla bellek kisitlamas
 
 ---
 ![redisVs.png](png/redisVs.png)
-Redis(pipeline) 200.000 tane Request’i 1 milisaniyenin altinda isler. Memcached ile 1 saniyede 80.000 isi yapar. MySQL ile kiyaslarsak MySQL 100 milisaniyede 900 is yapar.
+Redis(pipeline) 200.000 tane Requestâ€™i 1 milisaniyenin altinda isler. Memcached ile 1 saniyede 80.000 isi yapar. MySQL ile kiyaslarsak MySQL 100 milisaniyede 900 is yapar.
 
-## Redis’in Ozellikleri Ve Avantajlari Nelerdir?
+## Redisâ€™in Ozellikleri Ve Avantajlari Nelerdir?
 
 1. **Hizli ve Performansli**: Redis, bellek tabanli bir veri depolama sistemidir, bu da verilere hizli erisim ve isleme saglar. Icindeki verileri disk uzerinde degil, RAM'de saklar. Bu sayede yuksek performans elde edilir.
 2. **Veri Yapilari Destegi**: Redis, cesitli veri yapilarini destekler, bunlar arasinda anahtar-deger ciftleri, listeler, kume (set), sirali kume (sorted set), ve hashler bulunur. Bu esneklik, cesitli uygulama senaryolari icin idealdir.
@@ -98,7 +98,7 @@ Redis, bu temel veri yapilarina ek olarak daha gelismis yapilar da sunar ve bu y
 2. **Session Store**: Redis, web uygulamalari icin oturum verilerini saklamak icin kullanilabilir. Oturum verilerini Redis'te saklamak, birden fazla sunucu veya ornek uzerinde hizli ve olceklenebilir oturum yonetimini saglar.
 3. **Pub/Sub Messaging**: Redis, Pub/Sub Messaging iletisim modelini destekler, bu da gercek zamanli uygulamalarin (ornegin sohbet uygulamalari, canli guncellemeler, bildirimler) olusturulmasini saglar.
 4. **Queueing**: Redis, listeler ve sirali kumeler gibi veri yapilarini saglayarak kuyruklari ve oncelikli kuyruklari uygulamak icin kullanilabilir. Gorev kuyruklari ve arka planda islem goren is sistemleri icin message broker olarak yaygin olarak kullanilir.
-5. **Leaderboards and Counters(Siralama Listeleri ve Sayicilar)**: Redis, gercek zamanli skor tablolari olusturmak isteyen oyun gelistiriciler arasinda populer bir secimdir. Kullanici puanlarina gore siralanmis listeyi korurken ogelerin benzersizligini saglayan Redis Sorted Set veri yapisini kullanmaniz yeterlidir. Gercek zamanli bir dereceli liste olusturmak, bir kullanicinin puanini her degistiginde guncellemek kadar kolaydir. Puan olarak zaman damgalarini kullanarak zaman serisi verilerini islemek icin Sorted Sets’i de kullanabilirsiniz.
+5. **Leaderboards and Counters(Siralama Listeleri ve Sayicilar)**: Redis, gercek zamanli skor tablolari olusturmak isteyen oyun gelistiriciler arasinda populer bir secimdir. Kullanici puanlarina gore siralanmis listeyi korurken ogelerin benzersizligini saglayan Redis Sorted Set veri yapisini kullanmaniz yeterlidir. Gercek zamanli bir dereceli liste olusturmak, bir kullanicinin puanini her degistiginde guncellemek kadar kolaydir. Puan olarak zaman damgalarini kullanarak zaman serisi verilerini islemek icin Sorted Setsâ€™i de kullanabilirsiniz.
 6. **Geospatial Indexing(Cografi Indeksleme)**: Redis, cografi konumlama ve sorgulama destegi sunar. Bu, konum tabanli hizmetler veya mekansal sorgular gerektiren uygulamalar icin yararlidir.
 7. **Rate Limiting**: Redis, atomik islemler ve sona erme ozelliklerini kullanarak hiz sinirlama ve ayarlama mekanizmalarini uygulamak icin kullanilabilir.
 8. **Full-Text Search**: Redis, kendisi tam metin arama yetenekleri saglamaz, ancak Redisearch veya RediSearch modulu gibi diger araclarla birlikte kullanilarak tam metin arama islevselligini uygulamak icin kullanilabilir.
@@ -120,7 +120,7 @@ Redis Sentinel'in temel ozellikleri sunlardir:
 
 Redis Sentinel, Redis'in yuksek erisilebilirlik gereksinimlerini karsilamak ve hizmet kesintilerini en aza indirmek icin kullanilan onemli bir bilesendir.
 
-## **Hangi Durumlarda Redis Sentinel’i Tercih Edebilirim?**
+## **Hangi Durumlarda Redis Sentinelâ€™i Tercih Edebilirim?**
 
 - **Redis Sunucusunun Arizalanmasi Durumunda**
 - **Bakim ve Guncelleme Sureclerinde**
@@ -150,13 +150,13 @@ Redis Cluster, dagitilmis uygulamalar icin guvenilir ve performansli bir veritab
 <br>
 ![the-matrix-reloaded-matrix.gif](png/the-matrix-reloaded-matrix.gif)
 <br>
-Amacimiz Neo’yu yenmek. Bunun icin de elimizdeki en iyi ajan olan Smith’i, o zamana kadar mukemmel analiz ettigimiz Neo’nun karsisina tek basina gonderiyoruz, biliyoruz ki butun yetenegi ve dayanikliligiyla sorunsuz bir sekilde gorevini yerine getirebilir.
+Amacimiz Neoâ€™yu yenmek. Bunun icin de elimizdeki en iyi ajan olan Smithâ€™i, o zamana kadar mukemmel analiz ettigimiz Neoâ€™nun karsisina tek basina gonderiyoruz, biliyoruz ki butun yetenegi ve dayanikliligiyla sorunsuz bir sekilde gorevini yerine getirebilir.
 
-Ancak o da ne, bir sorun var! Neo hic yorulmuyor, kaynaklarini oldukca verimli kullaniyor. Bizim kaynaklarimiz ise tukenmek uzere. Bu istisnai duruma karsi bir senaryomuz yok, durumu tolere edemiyoruz **(fault-tolerance**) ve elimizdeki tek sistemi de kaybediyoruz. Artik tamamen savunmasiz haldeyiz.
+Ancak o da ne, bir sorun var! Neo hic yorulmuyor, kaynaklarini oldukca verimli kullaniyor. Bizim kaynaklarimiz ise tukenmek uzere. Bu istisnai duruma karsi bir senaryomuz yok, durumu tolere edemiyoruzÂ **(fault-tolerance**) ve elimizdeki tek sistemi de kaybediyoruz. Artik tamamen savunmasiz haldeyiz.
 
 ### **Peki, elimizde 3 tane ayni yetenekte ajanimiz olsaydi?**
 
-Boylece kaynagi tukenen ajan kenara cekilip dinlense, bir baskasi onun yerine gecip sistemi savunmaya devam etse ve bu yuku devretme **(failover)** islemi sistemli bir sekilde ilerlese. Sonsuza kadar — teoride — ayakta kalabilir miydik?
+Boylece kaynagi tukenen ajan kenara cekilip dinlense, bir baskasi onun yerine gecip sistemi savunmaya devam etse ve bu yuku devretmeÂ **(failover)**Â islemi sistemli bir sekilde ilerlese. Sonsuza kadar â€” teoride â€” ayakta kalabilir miydik?
 
 ## Redis Persistence nedir?
 ![redis-persistent.jpg](png/redis-persistent.jpg)
@@ -232,6 +232,7 @@ For building and running the application you need:
 - https://redis.io/docs/latest/
 - https://medium.com/@selcukusta/redisin-high-availability-%C3%A7%C3%B6z%C3%BCm%C3%BC-sentinel-d9c2b6b1a616
 - https://medium.com/riseconsulting/redis-best-practises-a941c16c2933
+- https://medium.com/@huseyinaydin99/redis-nedir-ve-ne-ama%C3%A7la-kullan%C4%B1l%C4%B1r-cfa8d95a93b5
 - https://medium.com/intertechit/redis-sentinel-g%C3%BCvenilir-da%C4%9F%C4%B1t%C4%B1k-veri-tabanlar%C4%B1-9aee9f727acb
 - https://fatmadelenn.medium.com/spring-boot-ve-caching-59156475df75
 - https://metinalniacik.medium.com/spring-boot-cache-7a9e897195c3
