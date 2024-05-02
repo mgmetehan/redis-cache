@@ -1,5 +1,10 @@
 # redis-cache
 ## Redis
+# Sunum Kaydi:
+[Redis ile Caching: Web Uygulamalarınızı Nasıl Hızlandırırsınız?](https://www.youtube.com/live/gQM0CVnWrIk?si=9OEiMZ26iLkwXUJ8)
+
+    https://www.youtube.com/live/gQM0CVnWrIk?si=9OEiMZ26iLkwXUJ8
+    
 ![redis.png](png/redis.png)
 
 ## NoSQL veritabani nedir?
